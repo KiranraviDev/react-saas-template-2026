@@ -66,14 +66,14 @@ import {
 } from "@/components/ui/carousel"
 import {
   Command,
-  CommandDialog,
+  // CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
+  // CommandShortcut,
 } from "@/components/ui/command"
 
 import {
