@@ -88,6 +88,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import './App.css'
 import { ModeToggle } from "./components/mode-toggle"
+import { Counter } from "./features/counter/counter-component"
 
 function App() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -314,6 +315,11 @@ function App() {
             <ContextMenuItem>Subscription</ContextMenuItem>
           </ContextMenuContent>
         </ContextMenu>
+
+        <div>
+
+          <Counter />
+        </div>
       </ThemeProvider>
     </>
   )
