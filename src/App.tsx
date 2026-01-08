@@ -89,6 +89,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import './App.css'
 import { ModeToggle } from "./components/mode-toggle"
 import { Counter } from "./features/counter/counter-component"
+import Navbar from "./components/custom/navbar"
 
 function App() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -97,6 +98,8 @@ function App() {
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <ModeToggle />
+        <Navbar />
+
         <div className="flex flex-col items-center gap-2">
           <div className="flex w-full flex-wrap gap-2">
             <Badge>Badge</Badge>
