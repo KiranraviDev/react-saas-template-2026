@@ -1,73 +1,144 @@
-# React + TypeScript + Vite
+# React SaaS Template 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready React template for modern SaaS applications, featuring the latest technologies and best practices for scalable development.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React 19, TypeScript, Vite
+- **Routing**: TanStack Router (file-based)
+- **State Management**: Redux Toolkit + RTK Query
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Build Tool**: Vite with optimized production builds
+- **Linting**: ESLint with TypeScript support
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Modern React 19 with concurrent features
+- Type-safe routing and navigation
+- Centralized state management with Redux
+- Efficient API integration with RTK Query
+- Comprehensive UI component library
+- Dark/Light theme support
+- Responsive design
+- Production-ready build configuration
 
-## Expanding the ESLint configuration
+## 🏁 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Clone repository
+git clone https://github.com/KiranraviDev/react-saas-template-2026.git
+cd react-saas-template-2026
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Start development server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/     # UI components (shadcn/ui + custom)
+├── features/       # Feature modules (counter, auth, etc.)
+├── lib/           # Utilities and configurations
+├── routes/        # Page components (file-based routing)
+├── services/      # API services and RTK Query
+├── store/         # Redux store and hooks
+└── assets/        # Static assets
+```
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Development server with HMR
+- `npm run build` - Production build
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+### Environment Setup
+
+Create `.env` file for configuration:
+
+```env
+VITE_API_BASE_URL=https://api.yoursaas.com
+VITE_APP_ENV=development
+```
+
+## 🎯 Usage
+
+### Adding New Features
+
+1. Create feature directory in `src/features/`
+2. Add Redux slice for state management
+3. Create components and route files
+4. Update store configuration
+
+### API Integration
+
+Configure RTK Query in `src/services/api-slice.ts`:
+
+```typescript
+export const apiSlice = createApi({
+  baseQuery: fetchBaseQuery({ baseUrl: '/api' }),
+  endpoints: (builder) => ({
+    // Define your endpoints
+  }),
+});
+```
+
+## 🤝 Contributing
+
+### Branch Strategy
+- `main` - Production branch
+- `develop` - Development branch
+- `feature/*` - Feature branches
+- `hotfix/*` - Hotfix branches
+
+### Pull Request Process
+1. Create feature branch from `develop`
+2. Make changes with proper commits
+3. Ensure tests pass and linting is clean
+4. Create PR to `develop` branch
+5. Code review and merge
+
+### Code Standards
+- Use TypeScript for all new code
+- Follow ESLint configuration
+- Write meaningful commit messages
+- Add tests for new features
+
+## 📋 Repository Management
+
+### Issue Templates
+Use GitHub issue templates for:
+- Bug reports
+- Feature requests
+- Documentation improvements
+- Security issues
+
+### Labels
+- `bug` - Bug fixes
+- `enhancement` - New features
+- `documentation` - Documentation updates
+- `breaking-change` - Breaking changes
+- `good-first-issue` - Beginner-friendly issues
+
+### Release Process
+1. Merge to `main` branch
+2. Create GitHub release with version tag
+3. Update changelog
+4. Deploy to production
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🙏 Credits
+
+Built with modern web technologies for scalable SaaS development.
